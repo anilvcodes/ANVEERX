@@ -1,0 +1,796 @@
+
+:root {
+  --orange: #ff6b28;
+  --orange-light: #ff8a45;
+  --black: #101010;
+  --dark: #171717;
+  --gray: #a4a4a4;
+  --white: #ffffff;
+  --green: #138808;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.announcement {
+  text-align: center;
+  padding: 10px;
+  background: var(--orange);
+  color: #111;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.header {
+  height: 78px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #101010;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 35px;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.header nav a {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  transition: .3s;
+}
+
+.header nav a:hover {
+  color: var(--orange);
+}
+
+.nav-button {
+  padding: 14px 19px;
+  background: var(--orange);
+  color: #111 !important;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  background: none;
+  border: 0;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 690px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 70px 10%;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.65), rgba(0,0,0,.1)),
+    url('https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=2000&q=90')
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 730px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1,
+.section h2,
+.vision h2,
+.community h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(58px, 9vw, 112px);
+  line-height: .9;
+  letter-spacing: -2px;
+}
+
+.hero h1 span,
+.section h2 span,
+.vision h2 span,
+.community h2 span {
+  color: var(--orange);
+}
+
+.hero-content > p {
+  max-width: 480px;
+  color: #ddd;
+  line-height: 1.8;
+  margin: 28px 0;
+  font-size: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: .3s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-orange {
+  background: var(--orange);
+  color: #111;
+}
+
+.btn-orange:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border-color: #aaa;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.hero-location {
+  font-size: 10px;
+  margin-top: 45px;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #20cb72;
+  margin-right: 8px;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,107,40,.95);
+  color: #111;
+  padding: 17px 10%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.section {
+  padding: 100px 9%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 45px;
+  gap: 20px;
+}
+
+.section-heading h2,
+.about-content h2,
+.register-intro h2 {
+  font-size: clamp(43px, 6vw, 70px);
+}
+
+.section-heading > p,
+.about-content p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.distance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.distance-card {
+  background: var(--dark);
+  padding: 30px;
+  min-height: 220px;
+  border: 1px solid #303030;
+  transition: .3s;
+}
+
+.distance-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-5px);
+}
+
+.distance-card.featured {
+  border-color: var(--orange);
+  background: linear-gradient(135deg, #28180f, #171717);
+}
+
+.distance-card > span {
+  color: var(--gray);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.distance-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 76px;
+  margin: 14px 0 0;
+  line-height: 1;
+}
+
+.distance-card h3 span {
+  color: var(--orange);
+}
+
+.distance-card p {
+  color: var(--gray);
+  font-size: 10px;
+  font-weight: 800;
+  margin: 8px 0 20px;
+}
+
+.distance-card a {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--orange);
+}
+
+.small-note {
+  color: #777;
+  font-size: 10px;
+  margin-top: 18px;
+  line-height: 1.7;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+  background: #171717;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+  filter: saturate(.8);
+}
+
+.image-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--orange);
+  color: #111;
+  font-weight: 900;
+  padding: 14px 18px;
+  font-size: 10px;
+}
+
+.about-content p {
+  margin: 24px 0;
+}
+
+.vision {
+  padding: 85px 9%;
+  background: #e96829;
+  color: #111;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.vision .eyebrow {
+  color: #24150d;
+}
+
+.vision h2 span {
+  color: white;
+}
+
+.vision-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.vision-steps > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border-top: 1px solid rgba(0,0,0,.3);
+  padding-top: 15px;
+}
+
+.vision-steps b {
+  font-size: 12px;
+}
+
+.vision-steps span {
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.vision-steps small {
+  font-size: 11px;
+}
+
+.demo-tag {
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  padding: 9px 12px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.leader-table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+th {
+  color: var(--gray);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid #444;
+}
+
+td {
+  padding: 24px 20px;
+  font-size: 13px;
+  border-bottom: 1px solid #292929;
+}
+
+.rank {
+  color: var(--orange);
+  font-weight: 900;
+}
+
+.strava-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  background: #181818;
+}
+
+.strava-copy p {
+  color: var(--gray);
+  line-height: 1.9;
+  font-size: 13px;
+  margin: 25px 0;
+  max-width: 470px;
+}
+
+.strava-graphic {
+  min-height: 330px;
+  background: radial-gradient(circle, #48200f, #171717 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.strava-circle {
+  width: 160px;
+  height: 160px;
+  border: 3px solid var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed';
+  font-size: 80px;
+  font-weight: 900;
+}
+
+.strava-circle span {
+  color: var(--orange);
+}
+
+.strava-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.community {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background: linear-gradient(180deg, #101010, #20150f);
+}
+
+.community p {
+  color: var(--gray);
+  font-size: 13px;
+  margin: 25px auto;
+  max-width: 450px;
+  line-height: 1.8;
+}
+
+.register {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  background: #181818;
+}
+
+.register-intro > p {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 25px 0;
+  max-width: 420px;
+}
+
+.contact-number {
+  border-left: 3px solid var(--orange);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-number span {
+  color: var(--gray);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.contact-number strong {
+  font-size: 23px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 17px;
+  background: #242424;
+  border: 1px solid #444;
+  color: white;
+  outline: none;
+  font-family: inherit;
+}
+
+form input:focus,
+form select:focus {
+  border-color: var(--orange);
+}
+
+form select option {
+  background: #222;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.form-note {
+  color: #888;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.footer {
+  padding: 55px 9% 20px;
+  background: #090909;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-main p {
+  color: var(--orange);
+  font-weight: 900;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.footer-main small,
+.footer-social span {
+  color: var(--gray);
+  font-size: 10px;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.footer-social a {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.copyright {
+  border-top: 1px solid #303030;
+  padding-top: 20px;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  z-index: 150;
+  background: #20c76a;
+  color: white;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 5px 25px #0008;
+}
+
+@media(max-width: 900px) {
+  .header {
+    padding: 0 5%;
+  }
+
+  .header nav {
+    gap: 13px;
+  }
+
+  .header nav a {
+    font-size: 9px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .distance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about,
+  .vision,
+  .strava-section,
+  .register {
+    gap: 35px;
+  }
+}
+
+@media(max-width: 650px) {
+  .header {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #151515;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 25px;
+    border-top: 1px solid #333;
+  }
+
+  .header nav.active {
+    display: flex;
+  }
+
+  .header nav a {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .hero {
+    min-height: 630px;
+    padding: 60px 7%;
+    background-position: 62% center;
+  }
+
+  .hero h1 {
+    font-size: 75px;
+  }
+
+  .hero-content > p {
+    font-size: 13px;
+  }
+
+  .hero-bottom {
+    padding: 15px 5%;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .distance-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .distance-card {
+    padding: 18px;
+    min-height: 190px;
+  }
+
+  .distance-card h3 {
+    font-size: 58px;
+  }
+
+  .distance-card > span {
+    font-size: 8px;
+  }
+
+  .distance-card p,
+  .distance-card a {
+    font-size: 9px;
+  }
+
+  .about,
+  .vision,
+  .strava-section,
+  .register {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    height: 330px;
+  }
+
+  .vision {
+    padding: 65px 6%;
+  }
+
+  .vision-steps {
+    gap: 18px;
+  }
+
+  .strava-graphic {
+    min-height: 260px;
+  }
+
+  .community h2 {
+    font-size: 55px;
+  }
+
+  .register {
+    gap: 35px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .footer-main > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .copyright {
+    flex-direction: column;
+    line-height: 1.8;
+  }
+}
+
+@media(max-width: 360px) {
+  .distance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+}
